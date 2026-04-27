@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Shopify VA & Educator — Freelance Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#fff7f4;
+  --surface:#ffffff;
+  --text:#2a1508;
+  --muted:#8a6050;
+  --border:#f5d5c8;
+  --accent:#b85b30;
+  --accent-light:#fff0eb;
+  --accent-mid:#f4956a;
+  --serif:'DM Serif Display',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:15px;line-height:1.65;min-height:100vh}
+
+/* NAV */
+nav{background:rgba(255,247,244,0.93);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 2.5rem;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:100}
+.nav-name{font-family:var(--serif);font-size:1.15rem;color:var(--text)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:13px;letter-spacing:0.04em;text-transform:uppercase;transition:color 0.2s}
+.nav-links a:hover{color:var(--text)}
+.nav-hire{background:var(--accent);color:#fff;padding:7px 18px;border-radius:100px;font-size:13px;font-weight:500;border:none;cursor:pointer;font-family:var(--sans);text-decoration:none;transition:opacity 0.2s;display:inline-block}
+.nav-hire:hover{opacity:0.85}
+
+/* HERO */
+.hero{max-width:920px;margin:0 auto;padding:5rem 2.5rem 4rem;display:grid;grid-template-columns:1fr 220px;gap:3.5rem;align-items:start}
+.avail-pill{display:inline-flex;align-items:center;gap:7px;background:var(--accent-light);color:var(--accent);font-size:12px;font-weight:500;padding:5px 13px;border-radius:100px;margin-bottom:1.4rem;border:1px solid var(--border)}
+.avail-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:blink 2s ease-in-out infinite;flex-shrink:0}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+h1{font-family:var(--serif);font-size:clamp(2.2rem,4.5vw,3.4rem);line-height:1.08;letter-spacing:-0.025em;margin-bottom:1.25rem;color:var(--text)}
+h1 em{font-style:italic;color:var(--accent)}
+.hero-sub{color:var(--muted);font-size:15.5px;max-width:460px;margin-bottom:2rem;line-height:1.75}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap}
+.btn-p{background:var(--text);color:#fff0eb;border:none;padding:12px 24px;border-radius:100px;font-size:14px;font-weight:500;cursor:pointer;font-family:var(--sans);transition:opacity 0.2s,transform 0.15s;text-decoration:none;display:inline-block}
+.btn-p:hover{opacity:0.82;transform:translateY(-1px)}
+.btn-s{background:none;color:var(--text);border:1px solid var(--border);padding:12px 24px;border-radius:100px;font-size:14px;cursor:pointer;font-family:var(--sans);transition:border-color 0.2s,transform 0.15s;text-decoration:none;display:inline-block}
+.btn-s:hover{border-color:var(--accent);transform:translateY(-1px)}
+
+.profile-card{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:1.5rem;flex-shrink:0}
+.profile-avatar{width:68px;height:68px;border-radius:50%;background:var(--accent-light);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.7rem;color:var(--accent);margin-bottom:1rem;border:2px solid var(--border)}
+.profile-name{font-weight:500;font-size:14px;color:var(--text);margin-bottom:2px}
+.profile-role{font-size:12px;color:var(--muted);margin-bottom:1rem;line-height:1.4}
+.profile-rate{font-family:var(--serif);font-size:1.5rem;color:var(--text);line-height:1}
+.profile-rate-label{font-size:11px;color:var(--muted);margin-bottom:1rem}
+.profile-badge{background:var(--accent-light);color:var(--accent);font-size:11px;font-weight:500;padding:4px 10px;border-radius:100px;display:inline-block;margin-bottom:1rem;border:1px solid var(--border)}
+.profile-stat{display:flex;justify-content:space-between;font-size:12px;padding:5px 0;border-bottom:0.5px solid var(--border)}
+.profile-stat:last-child{border:none}
+.profile-stat span:first-child{color:var(--muted)}
+.profile-stat span:last-child{font-weight:500;color:var(--text)}
+
+/* WRAP */
+.wrap{max-width:920px;margin:0 auto;padding:0 2.5rem}
+
+/* STATS */
+.stats-bar{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:16px;overflow:hidden;margin-bottom:4rem}
+.stat-c{background:var(--surface);padding:1.75rem;text-align:center}
+.stat-n{font-family:var(--serif);font-size:2.2rem;color:var(--accent);line-height:1;margin-bottom:4px}
+.stat-l{font-size:12px;color:var(--muted)}
+
+/* SECTION */
+.section-label{font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent-mid);margin-bottom:0.7rem}
+h2{font-family:var(--serif);font-size:clamp(1.7rem,3vw,2.3rem);letter-spacing:-0.02em;color:var(--text);margin-bottom:0.8rem}
+.section-sub{color:var(--muted);margin-bottom:2.25rem;max-width:500px;line-height:1.7}
+
+/* SERVICES */
+.services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.1rem;margin-bottom:4rem}
+.svc{background:var(--surface);border:1px solid var(--border);border-radius:15px;padding:1.4rem 1.6rem;transition:border-color 0.2s,transform 0.18s,box-shadow 0.18s}
+.svc:hover{border-color:var(--accent-mid);transform:translateY(-3px);box-shadow:0 8px 30px rgba(184,91,48,0.08)}
+.svc.full{grid-column:span 2}
+.svc-icon{width:38px;height:38px;border-radius:10px;background:var(--accent-light);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
+.svc-icon svg{width:18px;height:18px;stroke:var(--accent);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.svc-title{font-weight:500;font-size:14px;color:var(--text);margin-bottom:5px}
+.svc-desc{font-size:13px;color:var(--muted);line-height:1.6}
+
+/* TEACHING */
+.teaching-wrap{background:var(--surface);border:1px solid var(--border);border-radius:18px;overflow:hidden;margin-bottom:4rem}
+.teaching-header{background:var(--accent-light);border-bottom:1px solid var(--border);padding:1.6rem 1.9rem;display:flex;align-items:center;gap:14px}
+.t-icon-box{width:46px;height:46px;border-radius:12px;background:#fff;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.t-icon-box svg{width:22px;height:22px;stroke:var(--accent);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.t-head-title{font-weight:500;font-size:16px;color:var(--text);margin-bottom:3px}
+.t-head-sub{font-size:13px;color:var(--accent)}
+.teaching-body{padding:1.6rem 1.9rem}
+.teaching-intro{font-size:14px;color:var(--muted);margin-bottom:1.4rem;line-height:1.7}
+.teaching-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.t-card{background:var(--bg);border:1px solid var(--border);border-radius:13px;padding:1.1rem 1.3rem;transition:border-color 0.2s,transform 0.18s}
+.t-card:hover{border-color:var(--accent-mid);transform:translateY(-2px)}
+.t-label{font-size:11px;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+.t-title{font-weight:500;font-size:14px;color:var(--text);margin-bottom:4px}
+.t-desc{font-size:13px;color:var(--muted);line-height:1.6}
+
+/* WHY */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;margin-bottom:4rem}
+.why-card{background:var(--surface);border:1px solid var(--border);border-radius:15px;padding:1.4rem;transition:border-color 0.2s}
+.why-card:hover{border-color:var(--accent-mid)}
+.why-num{font-family:var(--serif);font-size:2rem;color:var(--accent);opacity:0.3;line-height:1;margin-bottom:0.6rem;border-bottom:2px solid var(--accent-light);padding-bottom:0.6rem}
+.why-title{font-weight:500;font-size:14px;margin-bottom:5px;color:var(--text)}
+.why-desc{font-size:13px;color:var(--muted);line-height:1.6}
+
+/* CONTACT */
+.contact-section{margin-bottom:5rem}
+.contact-inner{background:var(--text);border-radius:24px;padding:3.5rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.contact-left h2{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.5rem);color:#fff0eb;letter-spacing:-0.02em;margin-bottom:0.75rem}
+.contact-left p{color:rgba(255,240,235,0.6);font-size:14px;line-height:1.75;margin-bottom:1.5rem}
+.contact-channels{display:flex;flex-direction:column;gap:10px}
+.contact-link{display:flex;align-items:center;gap:10px;background:rgba(255,240,235,0.08);border:1px solid rgba(255,240,235,0.15);border-radius:12px;padding:12px 16px;text-decoration:none;transition:background 0.2s,border-color 0.2s}
+.contact-link:hover{background:rgba(255,240,235,0.14);border-color:rgba(255,240,235,0.3)}
+.contact-link-icon{width:34px;height:34px;border-radius:9px;background:rgba(255,240,235,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.contact-link-icon svg{width:17px;height:17px;stroke:#fff0eb;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.contact-link-text{}
+.contact-link-label{font-size:11px;color:rgba(255,240,235,0.45);letter-spacing:0.05em;text-transform:uppercase;margin-bottom:1px}
+.contact-link-value{font-size:13px;font-weight:500;color:#fff0eb}
+
+.contact-right{}
+.contact-form{display:flex;flex-direction:column;gap:12px}
+.form-group{display:flex;flex-direction:column;gap:5px}
+.form-label{font-size:12px;color:rgba(255,240,235,0.5);letter-spacing:0.04em}
+.form-input,.form-textarea{background:rgba(255,240,235,0.07);border:1px solid rgba(255,240,235,0.15);border-radius:10px;padding:11px 15px;font-size:14px;font-family:var(--sans);color:#fff0eb;outline:none;transition:border-color 0.2s;width:100%}
+.form-input::placeholder,.form-textarea::placeholder{color:rgba(255,240,235,0.3)}
+.form-input:focus,.form-textarea:focus{border-color:rgba(255,240,235,0.4)}
+.form-textarea{resize:vertical;min-height:100px;line-height:1.6}
+.form-submit{background:var(--accent-mid);color:#fff;border:none;border-radius:100px;padding:12px 24px;font-size:14px;font-weight:500;cursor:pointer;font-family:var(--sans);transition:opacity 0.2s,transform 0.15s;align-self:flex-start;margin-top:4px}
+.form-submit:hover{opacity:0.88;transform:translateY(-1px)}
+.form-success{display:none;background:rgba(255,240,235,0.1);border:1px solid rgba(255,240,235,0.2);border-radius:12px;padding:14px 18px;font-size:14px;color:#fff0eb;text-align:center;margin-top:4px}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:2rem 2.5rem;display:flex;justify-content:space-between;align-items:center;max-width:920px;margin:0 auto;font-size:13px;color:var(--muted)}
+footer a{color:var(--accent);text-decoration:none}
+footer a:hover{text-decoration:underline}
+
+/* ANIMATIONS */
+.fade{opacity:0;transform:translateY(18px);transition:opacity 0.55s ease,transform 0.55s ease}
+.fade.visible{opacity:1;transform:translateY(0)}
+
+@media(max-width:700px){
+  .hero{grid-template-columns:1fr}
+  .profile-card{display:none}
+  .services-grid,.why-grid,.teaching-grid{grid-template-columns:1fr}
+  .svc.full{grid-column:span 1}
+  .stats-bar{grid-template-columns:1fr}
+  .contact-inner{grid-template-columns:1fr;padding:2rem 1.5rem}
+  nav{padding:0 1.25rem}
+  .wrap{padding:0 1.25rem}
+  .hero{padding:3rem 1.25rem 2.5rem}
+  .nav-links{display:none}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-name">Shopify VA &amp; Educator</div>
+  <ul class="nav-links">
+    <li><a href="#shopify">Shopify</a></li>
+    <li><a href="#teaching">Teaching</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-hire">Hire me</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div>
+    <div class="avail-pill"><span class="avail-dot"></span>Available for new projects</div>
+    <h1>Two skills, one <em>reliable</em> freelancer</h1>
+    <p class="hero-sub">I help e-commerce founders reclaim their time with Shopify store management — and support learners through hands-on activities and thoughtful curriculum planning.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-p">Get in touch</a>
+      <a href="#shopify" class="btn-s">See my services</a>
+    </div>
+  </div>
+  <div class="profile-card">
+    <div class="profile-avatar">VA</div>
+    <div class="profile-name">Shopify VA &amp; Educator</div>
+    <div class="profile-role">E-commerce · Curriculum Planning</div>
+    <div class="profile-rate">$12.00</div>
+    <div class="profile-rate-label">per hour</div>
+    <div class="profile-badge">Rising Talent · Upwork</div>
+    <div class="profile-stat"><span>Availability</span><span>Full time</span></div>
+    <div class="profile-stat"><span>Response time</span><span>&lt; 24 hrs</span></div>
+    <div class="profile-stat"><span>On-time rate</span><span>100%</span></div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- STATS -->
+  <div class="stats-bar fade">
+    <div class="stat-c"><div class="stat-n">$12</div><div class="stat-l">Hourly rate</div></div>
+    <div class="stat-c"><div class="stat-n">100%</div><div class="stat-l">On-time delivery</div></div>
+    <div class="stat-c"><div class="stat-n">24h</div><div class="stat-l">Response time</div></div>
+  </div>
+
+  <!-- SHOPIFY -->
+  <div id="shopify" style="margin-bottom:4rem" class="fade">
+    <p class="section-label">Shopify services</p>
+    <h2>E-commerce support</h2>
+    <p class="section-sub">Essential store management tasks handled with care — so you can stop doing backend work and start focusing on growth.</p>
+    <div class="services-grid">
+      <div class="svc">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+        <div class="svc-title">Product management</div>
+        <div class="svc-desc">Manual product uploads, complex variant configuration (size, color, material), and collection optimization for better store navigation.</div>
+      </div>
+      <div class="svc">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 00-2 2v6a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
+        <div class="svc-title">Inventory management</div>
+        <div class="svc-desc">Accurate stock levels maintained across your dashboard to prevent overselling and sync issues — updated consistently and proactively.</div>
+      </div>
+      <div class="svc full">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+        <div class="svc-title">AI content refinement &amp; SEO</div>
+        <div class="svc-desc">I humanize AI-generated product descriptions and optimize them for search — so your listings read naturally, rank better, and actually convert. No robotic copy, just clean and compelling content that sounds like your brand.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TEACHING -->
+  <div id="teaching" style="margin-bottom:4rem" class="fade">
+    <p class="section-label">Teaching services</p>
+    <h2>Education &amp; curriculum</h2>
+    <p class="section-sub">Structured, learner-first curriculum design and classroom activities — built around real engagement, not just covering content.</p>
+    <div class="teaching-wrap">
+      <div class="teaching-header">
+        <div class="t-icon-box"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></div>
+        <div>
+          <div class="t-head-title">Teaching &amp; curriculum planning</div>
+          <div class="t-head-sub">Activity design · Lesson planning · Learning materials</div>
+        </div>
+      </div>
+      <div class="teaching-body">
+        <p class="teaching-intro">Whether you need help designing engaging classroom activities or building a full curriculum from scratch, I bring the same detail-oriented mindset — clear structure, thoughtful pacing, and outcomes that actually matter to learners.</p>
+        <div class="teaching-grid">
+          <div class="t-card">
+            <div class="t-label">Activity design</div>
+            <div class="t-title">Hands-on learning activities</div>
+            <div class="t-desc">Engaging, learner-centered activities built around specific objectives — interactive, practical, and easy to facilitate.</div>
+          </div>
+          <div class="t-card">
+            <div class="t-label">Curriculum planning</div>
+            <div class="t-title">Structured lesson plans</div>
+            <div class="t-desc">Organized lesson plans and unit maps aligned to learning goals, with clear flow and assessable outcomes.</div>
+          </div>
+          <div class="t-card">
+            <div class="t-label">Learning materials</div>
+            <div class="t-title">Worksheets &amp; resources</div>
+            <div class="t-desc">Supporting materials — worksheets, guides, and handouts — designed to reinforce lessons and keep learners on track.</div>
+          </div>
+          <div class="t-card">
+            <div class="t-label">Content organization</div>
+            <div class="t-title">Scope &amp; sequence planning</div>
+            <div class="t-desc">Breaking down big topics into manageable, well-sequenced units so learners build understanding step by step.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHY ME -->
+  <div style="margin-bottom:4rem" class="fade">
+    <p class="section-label">Why work with me</p>
+    <h2>What I bring to every project</h2>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-num">01</div>
+        <div class="why-title">Detail-oriented</div>
+        <div class="why-desc">I double-check every entry, every plan, every deliverable before it goes live or out the door. Manual work should be perfect.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-num">02</div>
+        <div class="why-title">Growth mindset</div>
+        <div class="why-desc">Fast learner. If your workflow or teaching context needs a specific tool or approach, I'm happy to pick it up quickly.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-num">03</div>
+        <div class="why-title">Reliable communication</div>
+        <div class="why-desc">Consistent updates, every deadline hit. Whether it's your store or your students, I treat every project as a real priority.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div id="contact" class="contact-section fade">
+    <div class="contact-inner">
+      <div class="contact-left">
+        <h2>Let's work together</h2>
+        <p>Have a project in mind? Send me a message or reach out on any of the platforms below — I usually respond within 24 hours.</p>
+        <div class="contact-channels">
+          <a href="https://www.upwork.com/freelancers/~01f13a0ea9dcc3440c" target="_blank" class="contact-link">
+            <div class="contact-link-icon">
+              <svg viewBox="0 0 24 24"><path d="M18 8a6 6 0 01-6 6 6 6 0 01-6-6 6 6 0 016-6 6 6 0 016 6z"/><path d="M22 20c0-4-4-6-10-6S2 16 2 20"/></svg>
+            </div>
+            <div class="contact-link-text">
+              <div class="contact-link-label">Upwork</div>
+              <div class="contact-link-value">View my profile &amp; invite me</div>
+            </div>
+          </a>
+          <a href="mailto:your@email.com" class="contact-link">
+            <div class="contact-link-icon">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="contact-link-text">
+              <div class="contact-link-label">Email</div>
+              <div class="contact-link-value">your@email.com</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-right">
+        <div class="contact-form" id="contactForm">
+          <div class="form-group">
+            <label class="form-label">Your name</label>
+            <input class="form-input" type="text" id="fname" placeholder="Jane Smith"/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Your email</label>
+            <input class="form-input" type="email" id="femail" placeholder="jane@example.com"/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">What do you need help with?</label>
+            <textarea class="form-textarea" id="fmsg" placeholder="Tell me about your project or what you're looking for..."></textarea>
+          </div>
+          <button class="form-submit" onclick="submitForm()">Send message →</button>
+          <div class="form-success" id="formSuccess">
+            ✓ Thanks for reaching out! I'll get back to you within 24 hours.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div>Shopify VA &amp; Educator — Freelance Services</div>
+  <a href="https://www.upwork.com/freelancers/~01f13a0ea9dcc3440c" target="_blank">View Upwork profile ↗</a>
+</footer>
+
+<script>
+// Scroll animations
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, {threshold: 0.08});
+document.querySelectorAll('.fade').forEach(el => observer.observe(el));
+
+// Contact form — opens mailto as fallback (works without a backend)
+function submitForm() {
+  const name  = document.getElementById('fname').value.trim();
+  const email = document.getElementById('femail').value.trim();
+  const msg   = document.getElementById('fmsg').value.trim();
+
+  if (!name || !email || !msg) {
+    alert('Please fill in all fields before sending.');
+    return;
+  }
+
+  // Build a mailto link so the message lands in your inbox
+  const subject = encodeURIComponent('Portfolio inquiry from ' + name);
+  const body    = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + msg);
+  window.location.href = 'mailto:your@email.com?subject=' + subject + '&body=' + body;
+
+  // Show success message
+  document.getElementById('formSuccess').style.display = 'block';
+  document.getElementById('fname').value  = '';
+  document.getElementById('femail').value = '';
+  document.getElementById('fmsg').value   = '';
+}
+</script>
+</body>
+</html>
